@@ -3,9 +3,13 @@
 require_once __DIR__ . '/../app/controllers/AuthController.php';
 require_once __DIR__ . '/../app/controllers/DashboardController.php';
 
+define('BASE_URL', '/projeto-escola/');
+
 // Depuração: Mostre a URI capturada
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 echo "URI capturada: $uri<br>";
+
+$uri = str_replace('/projeto-escola', '', $uri);  // Ajusta a URI, removendo o prefixo do projeto
 
 switch ($uri) {
     case '/Projeto_Escola/public/':
